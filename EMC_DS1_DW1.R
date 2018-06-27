@@ -41,7 +41,6 @@ df$product_laptop <- 0
 df$product_tablet <- 0
 
 ### Create Binary Columns
-
 df$company_philips[df$company =="philips"] <- 1
 df$company_azko[df$company =="azko"] <- 1
 df$company_van_houten[df$company =="van houten"] <- 1
@@ -53,7 +52,4 @@ df$product_laptop[df$product =="Laptop"] <- 1
 df$product_tablet[df$product =="Tablet"] <- 1
 
 ### Write CSV file 
-
 write.csv(df, file = "EMC_DS1_1.csv")
-
-
