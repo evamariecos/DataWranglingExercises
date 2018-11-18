@@ -98,16 +98,160 @@ data123["country"] <- NA
 ## add all location values to lowercase
 dataf5 <-mutate(dataf5,Location=tolower(Location))
 
-### For non U.S residents I used a data set called world cities, which included information on cities globally and the countries these cities corresponded to.
-## Categorize location by country to understand distribution
-### Install Maps package and world.cities data
-install.packages("maps")
-data(world.cities)
-aa <- c(dataf5$Location)
-## Remove punctuation 
-ab <- gsub( ',', '', dataf5$Location)
-# Split data at word boundaries
-abc <- strsplit(ab, " ")
+dataf5$country <- ifelse(grepl("alabama", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("al", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("alaska", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ak", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("arizona", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("az", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("arkansas", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ar", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("california", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ca", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("colorado", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("co", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("connecticut", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ct", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("delaware", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("de", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("district of columbia", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("dc", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("florida", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("fl", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("georgia", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ga", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("hawaii", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("hi", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("idago", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("idaho", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("id", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("illinois", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("il", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("indiana", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("in", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("iowa", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ia", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("kansas", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ks", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("kentucky", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ky", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("louisiana", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("la", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("maine", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("me", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("maryland", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("md", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("massachusetts", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ma", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("michigan", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("mi", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("minnesota", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("mn", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("mississippi", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ms", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("missouri", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("mo", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("montana", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("mt", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("nebraska", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ne", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("nevada", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("nv", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("new hampshire", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("nh", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("new jersey", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("nj", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("new mexico", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("new york", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("nm", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ny", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("north carolina", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("nc", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("nd", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("north dakota", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ohio", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("oh", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("oklahoma", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ok", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("oregon", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("or", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("pennsylvania", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("pa", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("rhode island", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ri", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("south carolina", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("sc", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("south dakota", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("sd", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("tennessee", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("tn", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("texas", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("tx", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("utah", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("ut", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("vermont", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("vt", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("virginia", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("va", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("washington", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("wa", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("west virginia", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("wv", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("wisconsin", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("wi", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("wyoming", dataf5$Location), "United States", "NA")
+dataf5$country <- ifelse(grepl("wy", dataf5$Location), "United States", "NA")
+
+## In Sources column, choose only one channel. Firstly remove 'job site', then comma 
+data$Sources <- gsub('Job site', '', data$Sources)
+
+
+a <- dataf5
+
+# returns string w/o leading or trailing whitespace
+trim <- function (x) gsub("^\\s+|\\s+$", "", x)
+
+#removing any special character
+a$Tags <- gsub("[[:punct:]]", "", a$Tags)
+
+#apply trim function 
+a$Tags <- gsub("\\s+", " ", trim(a$Tags))
+a$Tags <- trim(a$Tags)
+
+#Create a data.frame with all the course names
+courses <- data.frame(courses = c("Cybersecurity Mentor",
+                                  "Digital Marketing Course Mentor",
+                                  "UX Design Course Mentor",
+                                  "Business Analytics Course Mentor",
+                                  "Data Science Course Mentor",
+                                  "Data Analytics for Business Course Mentor"))
+
+a$Tags <- as.character(a$Tags)
+courses$courses <- as.character(courses$courses)
+b$institution <-as.character(b$institution)
+a$Names.of.Universities.Attended <- as.character(a$Names.of.Universities.Attended
+)
+
+#Library for fuzzy join
+install.packages("fuzzyjoin")
+library(fuzzyjoin)
+
+# Add in data of world university rankings 'UniData.csv'
+b <- read.csv("UniData.csv")
+b$world_rank <- NULL
+
+#Left fuzzy join for merging the courses.
+a <- a %>% regex_left_join(courses, by = c(Tags = "courses"))
+
+#Left fuzzy join for merging the top university list.
+a <- a %>% regex_left_join(b, by = c(Names.of.Universities.Attended = "institution"))
+
+write.csv(a, "abc.csv")
+
+
+
+
+
 
 ### For my data I have yet to get distribution info of the countries from the candidate pool. 
 ### In addition to getting this distribution I plan on get an evenly correlated distribution of highest ranked schools in the countries that applicants came from.
